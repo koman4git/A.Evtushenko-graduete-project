@@ -4,6 +4,7 @@ import slider from './modules/slider'
 import smoothScroll from './modules/smoothScroll'
 import btnServises from './modules/btnServ'
 import accordeon from './modules/accordeon'
+import carousel from './modules/carousel'
 
 
 modal()
@@ -12,3 +13,4 @@ slider()
 smoothScroll()
 btnServises()
 accordeon()
+carousel()

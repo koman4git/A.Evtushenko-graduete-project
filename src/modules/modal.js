@@ -2,18 +2,23 @@
 import { animate } from "./helpers";
 
 const modal = () => {
-    const callbackBtn = document.querySelectorAll(".callback-btn");
-    const modalCallback = document.querySelector(".modal-callback");
-    const modalOverlay = document.querySelector(".modal-overlay");
-    const modalClose = document.querySelector(".modal-close");
+    const modalCallback = document.querySelector('.modal-callback')
+    const modalOverlay = document.querySelector('.modal-overlay')
+    const modalClose = document.querySelector('.modal-close')
+    const btnModal = document.querySelectorAll('.fancyboxModal')
+    const body = document.querySelector('body')
   
-    const screen = window.screen.width;
+    const screen = window.screen.width
+    
+    const handleModal = () => {
+      body.classList.toggle('lock')
+    }
   
-    callbackBtn.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        modalOverlay.style.display = "block";
-        modalCallback.style.display = "block";
-        modalCallback.style.top = -50 + "%";
+    btnModal.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        modalOverlay.style.display = 'block'
+        modalCallback.style.display = 'block'
+        modalCallback.style.top = -50 + '%'
   
         if (screen > 768) {
           animate({
@@ -22,33 +27,36 @@ const modal = () => {
               return timeFraction;
             },
             draw(progress) {
-              modalCallback.style.top = -50 + 80 * progress + "%";
+              modalCallback.style.top = -50 + 80 * progress + '%'
             },
-          });
+          })
         } else {
-          modalOverlay.style.display = "block";
-          modalCallback.style.top = 20 + "%";
+          modalOverlay.style.display = 'block'
+          modalCallback.style.top = 20 + '%'
         }
-      });
+      })
+    })
+  
+    modalOverlay.addEventListener('click', () => {
+      modalOverlay.style.display = 'none'
+      modalCallback.style.display = "none"
+      handleModal()
     });
   
-    modalOverlay.addEventListener("click", () => {
-      modalOverlay.style.display = "none";
-      modalCallback.style.display = "none";
-    });
+    modalClose.addEventListener('click', () => {
+      modalOverlay.style.display = 'none'
+      modalCallback.style.display = 'none'
+      handleModal()
+    })
   
-    modalClose.addEventListener("click", () => {
-      modalOverlay.style.display = "none";
-      modalCallback.style.display = "none";
-    });
-  
-    document.addEventListener("keydown", (event) => {
-      const key = event.key;
-      if (key === "Escape") {
-        modalOverlay.style.display = "none";
-        modalCallback.style.display = "none";
+    document.addEventListener('keydown', (event) => {
+      const key = event.key
+      if (key === 'Escape') {
+        modalOverlay.style.display = 'none'
+        modalCallback.style.display = 'none'
       }
-    });
-  };
+      handleModal()
+    })
+  }
   
-  export default modal;
+  export default modal
