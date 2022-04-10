@@ -857,6 +857,15 @@ hr.white {
 	height: 450px;
 	position: relative;
 }
+/* .hidden{
+	opacity: 1;
+	visibility: visible;
+} */
+.table_active{
+	transform: scale(1);
+	opacity: 1;
+	visibility: visible;
+}
 .top-slider .item:before {
 	content: "";
 	display: block;
@@ -932,8 +941,8 @@ video#video_background {
 		height: 520px;
 	}
 	.top-slider .table {
-		opacity: 0;
-		visibility: hidden;
+		opacity: 1;
+		visibility: visible;
 		-webkit-transform: scale(1.5);
 		-ms-transform: scale(1.5);
 		-o-transform: scale(1.5);
