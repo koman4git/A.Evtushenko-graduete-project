@@ -11,7 +11,6 @@ const slider = () => {
 
     const prevSlide = (elems, index) => {
         elems[index].hidden = true;
-        
     }
 
     const  nextSlide = (elems, index) => {

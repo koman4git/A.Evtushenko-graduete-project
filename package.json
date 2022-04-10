@@ -7,7 +7,6 @@
     "build": "webpack --mode=production",
     "watch": "webpack --watch --mode=development",
     "start": "webpack serve --mode=development --open"
-    
   },
   "author": "A.Evtushenko",
   "license": "ISC",
@@ -15,5 +14,14 @@
     "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.8.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koman4git/A.Evtushenko-graduete-project.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/koman4git/A.Evtushenko-graduete-project/issues"
+  },
+  "homepage": "https://github.com/koman4git/A.Evtushenko-graduete-project#readme"
 }
