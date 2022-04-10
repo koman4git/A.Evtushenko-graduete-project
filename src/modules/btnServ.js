@@ -9,7 +9,8 @@ const btnServises = () => {
   
     const screen = window.screen.width
   
-    btnServ.addEventListener('click', () => {
+    btnServ.addEventListener('click', (e) => {
+        e.preventDefault()
         modalOverlay.style.display = 'block'
         modalCallback.style.display = 'block'
         modalCallback.style.top = -50 + '%'
@@ -31,21 +32,24 @@ const btnServises = () => {
       })
     
   
-    modalOverlay.addEventListener('click', () => {
-      modalOverlay.style.display = 'none'
-      modalCallback.style.display = 'none'
+    modalOverlay.addEventListener('click', (e) => {
+        e.preventDefault()
+        modalOverlay.style.display = 'none'
+        modalCallback.style.display = 'none'
     })
   
-    modalClose.addEventListener('click', () => {
-      modalOverlay.style.display = 'none'
-      modalCallback.style.display = 'none'
+    modalClose.addEventListener('click', (e) => {
+        e.preventDefault()
+        modalOverlay.style.display = 'none'
+        modalCallback.style.display = 'none'
     })
   
     document.addEventListener('keydown', (e) => {
-      const key = e.key
-      if (key === 'Escape') {
-        modalOverlay.style.display = 'none'
-        modalCallback.style.display = 'none'
+        e.preventDefault()
+        const key = e.key
+        if (key === 'Escape') {
+         modalOverlay.style.display = 'none'
+         modalCallback.style.display = 'none'
       }
     })
   }

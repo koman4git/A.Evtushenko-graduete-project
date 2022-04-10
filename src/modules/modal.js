@@ -15,7 +15,8 @@ const modal = () => {
     }
   
     btnModal.forEach((btn) => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault()
         modalOverlay.style.display = 'block'
         modalCallback.style.display = 'block'
         modalCallback.style.top = -50 + '%'
@@ -37,20 +38,23 @@ const modal = () => {
       })
     })
   
-    modalOverlay.addEventListener('click', () => {
+    modalOverlay.addEventListener('click', (e) => {
+      e.preventDefault()
       modalOverlay.style.display = 'none'
       modalCallback.style.display = "none"
       handleModal()
     });
   
-    modalClose.addEventListener('click', () => {
+    modalClose.addEventListener('click', (e) => {
+      e.preventDefault()
       modalOverlay.style.display = 'none'
       modalCallback.style.display = 'none'
       handleModal()
     })
   
-    document.addEventListener('keydown', (event) => {
-      const key = event.key
+    document.addEventListener('keydown', (e) => {
+      e.preventDefault()
+      const key = e.key
       if (key === 'Escape') {
         modalOverlay.style.display = 'none'
         modalCallback.style.display = 'none'

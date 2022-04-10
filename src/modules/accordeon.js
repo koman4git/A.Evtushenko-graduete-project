@@ -7,7 +7,8 @@ const accordeon = () => {
 
     element.forEach((elem, index) => {
         elementContent[index].style.display = 'none'
-        elem.addEventListener('click', () => {
+        elem.addEventListener('click', (e) => {
+            e.preventDefault()
             if (elementContent[index].classList.contains('active')) {
                 elementContent[index].style.display = 'none'
             } else {

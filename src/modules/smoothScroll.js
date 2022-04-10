@@ -13,7 +13,8 @@ const smoothScroll = () => {
       }
     }
   
-    buttonUp.addEventListener("click", () => {
+    buttonUp.addEventListener("click", (e) => {
+      e.preventDefault()
       window.scrollBy({
         top: -document.documentElement.scrollHeight,
         behavior: "smooth",

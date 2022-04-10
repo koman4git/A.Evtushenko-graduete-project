@@ -29,7 +29,8 @@ const carousel = () => {
   if (start === 0) {
     buttonLeft.style.opacity = 0.2
   }
-  buttonLeft.addEventListener('click', () => {
+  buttonLeft.addEventListener('click', (e) => {
+    e.preventDefault()
     if (start > 0) {
       start -= 1
       viewCard -= 1
@@ -41,7 +42,8 @@ const carousel = () => {
       }
     }
   })
-  buttonRight.addEventListener('click', () => {
+  buttonRight.addEventListener('click', (e) => {
+    e.preventDefault()
     if (viewCard < cards.length) {
       cards[start++].style.display = 'none'
       cards[viewCard++].style.display = 'block'
