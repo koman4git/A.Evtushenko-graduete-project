@@ -2,7 +2,9 @@
 
 const smoothScroll = () => {
     const buttonUp = document.querySelector(".up")
-  
+    
+    buttonUp.style.display = "none"
+    
     window.onscroll = function () {
       if (window.pageYOffset > 580) {
         buttonUp.style.display = "block"
