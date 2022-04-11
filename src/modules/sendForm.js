@@ -21,14 +21,17 @@ const sendForm = ({ formId }) => {
 
         success = false
       }
-      if ((item.name === 'tel' && item.value.length < 6) || item.value.length > 16) {
-        item.style.border = '3px solid red'
+    
+      if (item.name === 'tel') {
+        if (item.value.length < 6 || item.value.length > 16) {
+          item.style.border = '3px solid red'
 
-        success = false
+          success = false
+        }
       }
     })
     return success
-  };
+  }
 
   const sendData = async (data) => {
     const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -38,7 +41,7 @@ const sendForm = ({ formId }) => {
         'Content-Type': 'application/json',
       },
     }).then((res) => res.json())
-  }
+  };
 
   const submitForm = () => {
     const formElements = form.querySelectorAll('input')
@@ -84,8 +87,8 @@ const sendForm = ({ formId }) => {
     if (!form) {
       throw new Error('Верните форму на место!')
     }
-    form.addEventListener('submit', (event) => {
-      event.preventDefault()
+    form.addEventListener('submit', (e) => {
+      e.preventDefault()
 
       submitForm()
     })
